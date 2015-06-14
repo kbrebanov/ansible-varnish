@@ -11,8 +11,9 @@ This role requires Ansible 1.4 or higher.
 Role Variables
 --------------
 
-| Name | Default | Description |
-|------|---------|-------------|
+| Name            | Default | Description                   |
+|-----------------|---------|-------------------------------|
+| varnish_version | 4.0.3   | Version of Varnish to install |
 
 Dependencies
 ------------
@@ -27,6 +28,13 @@ Install Varnish
 - hosts: all
   roles:
     - { role: kbrebanov.varnish }
+```
+
+Install older version of Varnish
+```
+- hosts: all
+  roles:
+    - { role: kbrebanov.varnish, varnish_version: 3.0.5 }
 ```
 
 License

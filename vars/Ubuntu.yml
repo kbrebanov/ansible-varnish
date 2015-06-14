@@ -1,2 +1,6 @@
 ---
 # vars file for varnish (Ubuntu specific)
+
+varnish_packages:
+  - varnish={{ varnish_version }}-*
+varnish_service_name: varnish

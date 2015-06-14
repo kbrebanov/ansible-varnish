@@ -1,2 +1,19 @@
 ---
 # tasks file for varnish (Ubuntu specific)
+
+- name: Add Varnish GPG key
+  apt_key: >
+    url=https://repo.varnish-cache.org/GPG-key.txt
+    state=present
+  tags: varnish
+
+- name: Add Varnish APT repository
+  apt_repository: >
+    repo="deb https://repo.varnish-cache.org/ubuntu/ trusty varnish-{{ varnish_version|truncate(3, True, '') }}"
+    state=present
+  tags: varnish
+
+- name: Install Varnish packages
+  apt: name={{ item }} state=present update_cache=yes cache_valid_time=3600
+  with_items: varnish_packages
+  tags: varnish

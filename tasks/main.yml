@@ -12,3 +12,27 @@
 - include: Ubuntu.yml
   when: ansible_distribution == "Ubuntu"
   tags: varnish
+
+- name: Create Varnish defaults file
+  template: >
+    src=varnish_default.j2
+    dest=/etc/default/varnish
+    owner=root
+    group=root
+    mode=0644
+  notify: restart varnish
+  tags: varnish
+
+- name: Create Varnish default VCL configuration
+  template: >
+    src=default.vcl.j2
+    dest=/etc/varnish/default.vcl
+    owner=root
+    group=root
+    mode=0644
+  notify: reload varnish
+  tags: varnish
+
+- name: Ensure Varnish service is started and enabled on boot
+  service: name={{ varnish_service_name }} state=started enabled=yes
+  tags: varnish
