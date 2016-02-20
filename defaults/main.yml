@@ -1,4 +1,4 @@
 ---
 # defaults file for varnish
 
-varnish_version: 4.0.3
+varnish_version: 4.1.1

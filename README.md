@@ -13,7 +13,7 @@ Role Variables
 
 | Name            | Default | Description                   |
 |-----------------|---------|-------------------------------|
-| varnish_version | 4.0.3   | Version of Varnish to install |
+| varnish_version | 4.1.1   | Version of Varnish to install |
 
 Dependencies
 ------------
