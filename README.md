@@ -1,6 +1,8 @@
 varnish
 =======
 
+[![Build Status](https://travis-ci.org/kbrebanov/ansible-varnish.svg?branch=master)](https://travis-ci.org/kbrebanov/ansible-varnish)
+
 Installs Varnish
 
 Requirements
