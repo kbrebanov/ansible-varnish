@@ -6,7 +6,7 @@ Installs Varnish
 Requirements
 ------------
 
-This role requires Ansible 1.4 or higher.
+This role requires Ansible 1.9 or higher.
 
 Role Variables
 --------------
@@ -24,14 +24,14 @@ Example Playbook
 ----------------
 
 Install Varnish
-```
+```yaml
 - hosts: all
   roles:
-    - { role: kbrebanov.varnish }
+    - kbrebanov.varnish
 ```
 
 Install older version of Varnish
-```
+```yaml
 - hosts: all
   roles:
     - { role: kbrebanov.varnish, varnish_version: 3.0.5 }

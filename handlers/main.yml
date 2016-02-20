@@ -2,9 +2,17 @@
 # handlers file for varnish
 
 - name: restart varnish
-  service: name={{ varnish_service_name }} state=restarted
-  tags: varnish
+  become: yes
+  service:
+    name: "{{ varnish_service_name }}"
+    state: restarted
+  tags:
+    - varnish
 
 - name: reload varnish
-  service: name={{ varnish_service_name }} state=reloaded
-  tags: varnish
+  become: yes
+  service:
+    name: "{{ varnish_service_name }}"
+    state: reloaded
+  tags:
+    - varnish
